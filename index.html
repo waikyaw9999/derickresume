@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wai Myo Kyaw - Senior Full Stack Developer</title>
+    <!-- Tailwind CSS CDN for easy styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* Light gray background */
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Custom scroll-behavior for smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.5rem; /* Consistent padding */
+        }
+        .section-heading {
+            font-size: 2.25rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: #1a202c; /* text-gray-900 */
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 1rem; /* rounded-xl */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        .btn-primary {
+            background-color: #4f46e5; /* indigo-600 */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem; /* rounded-lg */
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #4338ca; /* indigo-700 */
+        }
+        .btn-secondary {
+            background-color: #e0e7ff; /* indigo-100 */
+            color: #4f46e5; /* indigo-600 */
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem; /* rounded-lg */
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #c7d2fe; /* indigo-200 */
+            color: #3730a3; /* indigo-800 */
+        }
+        .tag {
+            background-color: #e0e7ff; /* indigo-100 */
+            color: #4f46e5; /* indigo-600 */
+            padding: 0.3rem 0.75rem;
+            border-radius: 0.5rem; /* rounded-full */
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-24 text-center shadow-lg rounded-b-3xl">
+        <div class="container flex flex-col items-center">
+            <img src="https://placehold.co/120x120/a78bfa/ffffff?text=WK" alt="Wai Myo Kyaw Profile" class="w-32 h-32 rounded-full mb-6 ring-4 ring-white ring-opacity-50">
+            <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Wai Myo Kyaw</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Senior Full Stack Developer | Lead Digital Developer</p>
+            <p class="text-lg md:text-xl max-w-3xl mb-10 font-normal">
+                Driving Innovation with 20 Years of Full Stack Expertise in Enterprise Solutions across <strong class="font-semibold">Singapore</strong>, Thailand, and Myanmar.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="#portfolio" class="btn-primary">View My Work</a>
+                <a href="https://www.linkedin.com/in/wai-myo-kyaw-b570691b/" target="_blank" class="btn-secondary">Connect on LinkedIn</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container py-12">
+
+        <!-- About Me Section -->
+        <section id="about" class="mb-16">
+            <h2 class="section-heading">About Me</h2>
+            <div class="card">
+                <p class="text-lg mb-4">
+                    Highly skilled and results-oriented professional with a proven track record in leading complex projects, designing scalable systems, and fostering team growth in multinational environments across <strong class="font-semibold">Singapore</strong>, Thailand, and Myanmar. Adept at combining programming and analytical abilities to successfully manage projects and deliver them on time.
+                </p>
+                <p class="text-lg mb-4">
+                    I am a proven team player and effective communicator, skilled at collaborating with all stakeholders. My commitment extends to producing high-quality, scalable, and maintainable software solutions, always adhering to best practices and Agile/Scrum methodologies.
+                </p>
+                <p class="text-lg mb-4">
+                    I hold a <strong class="font-semibold">Master of Science in Information Technology</strong> from Assumption University of Thailand. My academic foundation, combined with over two decades of practical experience, ensures a deep understanding of the software development lifecycle.
+                </p>
+                <p class="text-lg">
+                    A self-motivated, hard-working, and goal-oriented individual, I am a quick learner constantly eager to acquire new technologies and skills. I thrive both independently and as a collaborative team player, excelling in effective communication with all stakeholders.
+                </p>
+                <div class="mt-8">
+                    <h3 class="text-2xl font-semibold mb-3">Qualifications & Availability</h3>
+                    <ul class="list-disc list-inside text-lg space-y-2">
+                        <li>Microsoft Certified Professional (.NET) C#.NET</li>
+                        <li>Recommendation for Completing the International Advanced Diploma in Computer Studies (NCC-UK)</li>
+                        <li>Certificate in Web Application Development Using Java</li>
+                        <li>Certificate in E-Commerce Solution Development</li>
+                        <li>Honor Certificate from Myanmar Computer Professional Association in Best Programming</li>
+                        <li>Certificate in Web Design and Development</li>
+                        <li>Certificate in Graphic Design</li>
+                        <li>Certificate in Information and Technology Level (II & I)</li>
+                        <li class="mt-4"><strong class="font-semibold">Availability:</strong> 1 month notice (adjustable)</li>
+                        <li><strong class="font-semibold">Willing to relocate:</strong> Yes</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Expertise / Skills Section -->
+        <section id="skills" class="mb-16">
+            <h2 class="section-heading">Key Expertise & Skills</h2>
+            <div class="card">
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Web Design, Development and Management</span>
+                        <span class="tag">Frontend (HTML, HTML5, CSS, SCSS, JavaScript, VueJS, jQuery, AngularJS)</span>
+                        <span class="tag">Backend (Web API, REST API, SOAP API, MVC)</span>
+                        <span class="tag">System Integration</span>
+                        <span class="tag">WordPress</span>
+                        <span class="tag">WooCommerce</span>
+                        <span class="tag">WordPress REST API</span>
+                        <span class="tag">Directus</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">Umbraco</span>
+                        <span class="tag">Entity Framework</span>
+                        <span class="tag">.NET Framework</span>
+                        <span class="tag">.NET Core</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">C#.NET</span>
+                        <span class="tag">NodeJS</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">Java</span>
+                        <span class="tag">Dart</span>
+                        <span class="tag">Kotlin</span>
+                        <span class="tag">VB.NET</span>
+                        <span class="tag">Objective-C</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Database Design & Management</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Database Design & Development</span>
+                        <span class="tag">MS SQL Server</span>
+                        <span class="tag">Oracle</span>
+                        <span class="tag">MySQL</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">MongoDB</span>
+                        <span class="tag">RavenDB</span>
+                        <span class="tag">SQLite</span>
+                        <span class="tag">FoxPro</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Mobile Application Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Flutter</span>
+                        <span class="tag">iOS</span>
+                        <span class="tag">Android</span>
+                        <span class="tag">Hybrid</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">DevOps & Cloud</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">CI/CD Pipelines</span>
+                        <span class="tag">GitHub Actions</span>
+                        <span class="tag">GitLab Pipelines</span>
+                        <span class="tag">Google Cloud Platform</span>
+                        <span class="tag">AWS Lightsail Cloud</span>
+                        <span class="tag">Cloudways</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Kubernetes</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Project Management & Collaboration</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">JIRA</span>
+                        <span class="tag">Monday platforms</span>
+                        <span class="tag">Scrum</span>
+                        <span class="tag">Agile</span>
+                        <span class="tag">Kanban boards</span>
+                        <span class="tag">Git</span>
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">System Analysis & Design</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">System Analysis and Design</span>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Monitoring & Analytics</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Google Analytics 4</span>
+                        <span class="tag">Google Tag Manager</span>
+                        <span class="tag">Google Search Console</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Experience / Portfolio Section -->
+        <section id="portfolio" class="mb-16">
+            <h2 class="section-heading">Professional Experience & Projects</h2>
+
+            <!-- Project 1: Luxury Resort Management -->
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Enterprise Web Application & Digital Platform Lead</h3>
+                <p class="text-lg text-gray-600 mb-4">Senior Full Stack Developer / Lead Digital Developer at Luxury Resort Management Co.,LTD., Thailand (Aug 2021 – Present)</p>
+                <ul class="list-disc list-inside space-y-2 text-md">
+                    <li>Playing a key role in developing, supporting, and advancing enterprise web applications and servers within the Digital Marketing team.</li>
+                    <li>Implemented and trained the team to work with JIRA boards, enhancing project management efficiency using SCRUM and Agile.</li>
+                    <li>Managed projects and Git repositories, establishing robust CI/CD pipelines.</li>
+                    <li>Successfully managed server and application deployments on various cloud platforms, including AWS Lightsail, Google Cloud Platform, and Cloudways.</li>
+                    <li>Oversaw external API integrations (e.g., Sabre Synxis Booking Engine, Pomelo Pay) and coordinated vendor relationships, achieving certification in booking engine API integration.</li>
+                    <li>Conducted rigorous testing and quality assurance for applications on multiple devices and browsers.</li>
+                </ul>
+                <div class="mt-4">
+                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
+                    <div class="flex flex-wrap gap-2 mt-1">
+                        <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">NodeJS</span><span class="tag">Python</span><span class="tag">VueJS</span><span class="tag">Web API</span><span class="tag">REST API</span><span class="tag">SOAP API</span><span class="tag">WordPress</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SCSS</span><span class="tag">MySQL</span><span class="tag">MS SQL Server</span><span class="tag">MongoDB</span><span class="tag">Github Actions</span><span class="tag">Gitlab Pipelines</span><span class="tag">Google Cloud Platform</span><span class="tag">AWS Lightsail</span><span class="tag">Cloudways</span><span class="tag">JIRA</span><span class="tag">Agile</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: DTGO Corporations Limited -->
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Enterprise Application Development</h3>
+                <p class="text-lg text-gray-600 mb-4">Senior Full Stack Developer at DTGO Corporations Limited, Thailand (Jun 2019 – Aug 2021)</p>
+                <ul class="list-disc list-inside space-y-2 text-md">
+                    <li>Collaborated within an Agile/Scrum team to develop and maintain critical enterprise applications.</li>
+                    <li>Designed and managed complex backend API and database systems.</li>
+                    <li>Developed and maintained engaging front-end and mobile applications to enhance user experience.</li>
+                    <li>Efficiently managed tickets and project progress using Scrum, JIRA, and Kanban boards.</li>
+                </ul>
+                <div class="mt-4">
+                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
+                    <div class="flex flex-wrap gap-2 mt-1">
+                        <span class="tag">NodeJS</span><span class="tag">Javascript</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Dart</span><span class="tag">VueJS</span><span class="tag">Directus</span><span class="tag">Django</span><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Github Actions</span><span class="tag">Gitlab Pipelines</span><span class="tag">Google Cloud Platform</span><span class="tag">AWS Lightsail</span><span class="tag">JIRA</span><span class="tag">Scrum</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: Phillip Securities Pte Ltd (Singapore) -->
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Insurance Agent Management & Reporting System</h3>
+                <p class="text-lg text-gray-600 mb-4">Analyst Programmer at Phillip Securities Pte Ltd, <strong class="font-semibold text-indigo-800">Singapore</strong> (Jan 2008 – Feb 2009)</p>
+                <ul class="list-disc list-inside space-y-2 text-md">
+                    <li>Developed and maintained web applications for reporting, payouts, and training management for insurance agents.</li>
+                    <li>Created and optimized complex stored procedures to analyze data and generate ad-hoc reports, significantly enhancing data-driven decision-making.</li>
+                    <li>Collected user requirements and designed databases to support the organization's strategic objectives.</li>
+                    <li>Prepared comprehensive Software Requirement Specification (SRS) documents and meticulously designed test cases for UAT and QA phases.</li>
+                    <li>Successfully integrated and implemented systems, ensuring a seamless transition to UAT and Production environments.</li>
+                </ul>
+                <div class="mt-4">
+                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
+                    <div class="flex flex-wrap gap-2 mt-1">
+                        <span class="tag">C#.NET</span><span class="tag">ASP</span><span class="tag">MS SQL Server</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Zapper Services PTE LTD (Singapore) -->
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Web-based HR Management System Development</h3>
+                <p class="text-lg text-gray-600 mb-4">Programmer at Zapper Services PTE LTD, <strong class="font-semibold text-indigo-800">Singapore</strong> (Aug 2006 – Jan 2008)</p>
+                <ul class="list-disc list-inside space-y-2 text-md">
+                    <li>Developed and provided ongoing maintenance for a web-based HR Management System.</li>
+                    <li>Implemented and managed essential data export procedures using FoxPro to seamlessly transfer data to the HR & Payroll management system, enhancing data synchronization and accessibility.</li>
+                </ul>
+                <div class="mt-4">
+                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
+                    <div class="flex flex-wrap gap-2 mt-1">
+                        <span class="tag">ASP</span><span class="tag">VB.NET</span><span class="tag">MS SQL Server</span><span class="tag">FoxPro</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: Myanmar Computer Company Limited -->
+            <div class="card">
+                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Yangon City Web Portal & E-Office Systems</h3>
+                <p class="text-lg text-gray-600 mb-4">Programmer at Myanmar Computer Company Limited, Myanmar (Apr 2001 – Feb 2005)</p>
+                <ul class="list-disc list-inside space-y-2 text-md">
+                    <li>Involved in designing, developing, and maintaining systems and databases for the Yangon City web portal.</li>
+                    <li>Designed and built a comprehensive HR management system, an E-Office Management System, and an electronic bill collecting system.</li>
+                    <li>Actively engaged with end-users, collecting requirements, and translating them into well-designed databases and systems.</li>
+                </ul>
+                <div class="mt-4">
+                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
+                    <div class="flex flex-wrap gap-2 mt-1">
+                        <span class="tag">C#.NET</span><span class="tag">ASP</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Java Servlets</span><span class="tag">JSP</span><span class="tag">MS SQL Server</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note: You can add more projects following this structure -->
+
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="mb-16">
+            <h2 class="section-heading">Get in Touch</h2>
+            <div class="card text-center">
+                <p class="text-lg mb-4">
+                    I'm always open to discussing new projects, collaborations, or opportunities.
+                    Feel free to reach out!
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="mailto:waikyaw9999@gmail.com" class="btn-primary">Email Me</a>
+                    <a href="https://www.linkedin.com/in/wai-myo-kyaw-b570691b/" target="_blank" class="btn-secondary">Connect on LinkedIn</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-3xl">
+        <div class="container">
+            <p>&copy; 2025 Wai Myo Kyaw. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
