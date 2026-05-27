@@ -17,31 +17,97 @@
     </script>
     <script defer src="/_vercel/insights/script.js"></script>
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Wai Myo Kyaw: Senior Full Stack Developer & Lead with 20+ years experience in enterprise web, mobile, and software solutions across Singapore, Thailand, and Myanmar. Expertise in .NET, PHP, Node.js, Python, Vue.js, WordPress, WooCommerce, DevOps, and cloud.">
-    <meta name="keywords" content="Wai Myo Kyaw, Full Stack Developer, Senior Software Engineer, Lead Digital Developer, Portfolio, Web Development, Mobile Development, Enterprise Solutions, .NET, C#, PHP, Node.js, Python, Java, Vue.js, WordPress, WooCommerce, DevOps, Cloud, Singapore, Thailand, Myanmar">
+    <link rel="canonical" href="https://your-portfolio-url.com"> <!-- IMPORTANT: Replace with your actual deployed URL -->
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="Wai Myo Kyaw">
+    <meta name="theme-color" content="#4f46e5">
+    <meta name="description" content="Wai Myo Kyaw is a senior full stack developer and digital product lead with 20+ years building enterprise web, mobile, and cloud solutions for finance, travel, and enterprise clients in Singapore, Thailand, and Myanmar.">
+    <meta name="keywords" content="Senior Full Stack Developer, Digital Product Lead, Enterprise Web Development, Mobile Development, .NET, Node.js, Python, Vue.js, WordPress, WooCommerce, DevOps, Cloud, Singapore, Thailand, Myanmar">
     
     <!-- Open Graph / Facebook Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Lead">
-    <meta property="og:description" content="Wai Myo Kyaw: Senior Full Stack Developer & Lead with 20+ years experience in enterprise web, mobile, and software solutions across Singapore, Thailand, and Myanmar.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Wai Myo Kyaw Portfolio">
+    <meta property="og:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Digital Product Lead">
+    <meta property="og:description" content="Experienced senior full stack developer and product lead with 20+ years delivering enterprise-grade web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <!-- New high-quality image for social sharing -->
     <meta property="og:url" content="https://your-portfolio-url.com"> <!-- IMPORTANT: Replace with your actual deployed URL -->
     <meta property="og:type" content="website">
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Lead">
-    <meta name="twitter:description" content="Wai Myo Kyaw: Senior Full Stack Developer & Lead with 20+ years experience in enterprise web, mobile, and software solutions across Singapore, Thailand, and Myanmar.">
+    <meta name="twitter:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Digital Product Lead">
+    <meta name="twitter:description" content="Experienced senior full stack developer and product lead with 20+ years delivering enterprise-grade web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <!-- New high-quality image for Twitter social sharing -->
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Wai Myo Kyaw",
+      "url": "https://your-portfolio-url.com",
+      "jobTitle": "Senior Full Stack Developer & Digital Product Lead",
+      "description": "Senior full stack developer and product lead with 20+ years building enterprise web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressCountry": "Myanmar"
+      },
+      "email": "mailto:waikyaw9999@gmail.com",
+      "sameAs": [
+        "https://your-portfolio-url.com",
+        "https://wa.me/66953064462"
+      ]
+    }
+    </script>
     
     <!-- Tailwind CSS CDN for easy styling -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        // Inline script to prevent theme flash (FOUC)
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        :root {
+            --bg-color: #f8fafc; /* slate-50 */
+            --text-color: #0f172a; /* slate-900 */
+            --card-bg: #ffffff;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+            --card-hover-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --border-color: #e2e8f0;
+        }
+        .dark {
+            --bg-color: #0b0f19;
+            --text-color: #f1f5f9;
+            --card-bg: #111827;
+            --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2);
+            --card-hover-shadow: 0 20px 30px -5px rgba(0, 0, 0, 0.45), 0 10px 15px -5px rgba(0, 0, 0, 0.3);
+            --border-color: #1f2937;
+        }
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Light gray background */
-            color: #333;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
         /* Custom scroll-behavior for smooth scrolling */
         html {
@@ -53,81 +119,255 @@
             padding: 1.5rem; /* Consistent padding */
         }
         .section-heading {
+            font-family: 'Outfit', sans-serif;
             font-size: 2.25rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            color: #1a202c; /* text-gray-900 */
-            margin-bottom: 2rem;
+            font-weight: 800;
+            margin-bottom: 2.5rem;
             text-align: center;
+            background: linear-gradient(135deg, #4f46e5 0%, #a855f7 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .card {
-            background-color: #ffffff;
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 1rem; /* rounded-xl */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            box-shadow: var(--card-shadow);
             padding: 2rem;
             margin-bottom: 2rem;
-            transition: transform 0.3s ease-in-out;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s ease;
         }
         .card:hover {
             transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
         }
         .btn-primary {
-            background-color: #4f46e5; /* indigo-600 */
+            background: linear-gradient(135deg, #4f46e5 0%, #6366f1 100%);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem; /* rounded-lg */
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.25);
         }
         .btn-primary:hover {
-            background-color: #4338ca; /* indigo-700 */
+            background: linear-gradient(135deg, #4338ca 0%, #4f46e5 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
         }
         .btn-secondary {
-            background-color: #e0e7ff; /* indigo-100 */
-            color: #4f46e5; /* indigo-600 */
+            background-color: transparent;
+            color: #4f46e5;
+            border: 2px solid #e2e8f0;
             padding: 0.75rem 1.5rem;
             border-radius: 0.75rem; /* rounded-lg */
             text-decoration: none;
             font-weight: 600;
-            transition: background-color 0.3s ease, color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .dark .btn-secondary {
+            color: #a5b4fc;
+            border-color: #374151;
         }
         .btn-secondary:hover {
-            background-color: #c7d2fe; /* indigo-200 */
-            color: #3730a3; /* indigo-800 */
+            background-color: rgba(79, 70, 229, 0.05);
+            border-color: #4f46e5;
+            transform: translateY(-2px);
+        }
+        .dark .btn-secondary:hover {
+            background-color: rgba(165, 180, 252, 0.05);
+            border-color: #a5b4fc;
         }
         .tag {
-            background-color: #e0e7ff; /* indigo-100 */
-            color: #4f46e5; /* indigo-600 */
+            background-color: rgba(79, 70, 229, 0.06);
+            color: #4f46e5;
+            border: 1px solid rgba(79, 70, 229, 0.12);
             padding: 0.3rem 0.75rem;
-            border-radius: 0.5rem; /* rounded-full */
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500;
+            border-radius: 9999px; /* rounded-full */
+            font-size: 0.8125rem; /* text-sm style */
+            font-weight: 600;
             margin-right: 0.5rem;
             margin-bottom: 0.5rem;
             display: inline-block;
+            transition: all 0.2s ease;
+        }
+        .dark .tag {
+            background-color: rgba(165, 180, 252, 0.06);
+            color: #a5b4fc;
+            border-color: rgba(165, 180, 252, 0.12);
+        }
+        .tag:hover {
+            transform: translateY(-2px);
+            background-color: #4f46e5;
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.20);
+        }
+        .dark .tag:hover {
+            background-color: #6366f1;
+            color: white;
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.30);
+        }
+        /* Timeline styles */
+        .timeline-container {
+            position: relative;
+            padding-left: 2.5rem;
+            border-left: 2px solid #e2e8f0;
+            margin-left: 1rem;
+        }
+        .dark .timeline-container {
+            border-left-color: #1f2937;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: calc(-2.5rem - 9px); /* centers the dot over the 2px line */
+            top: 6px;
+            width: 16px;
+            height: 16px;
+            border-radius: 9999px;
+            background-color: #4f46e5;
+            border: 4px solid #f8fafc;
+            box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.15);
+            transition: all 0.3s ease;
+        }
+        .dark .timeline-dot {
+            border-color: #0b0f19;
+            box-shadow: 0 0 0 4px rgba(165, 180, 252, 0.15);
+        }
+        .timeline-item:hover .timeline-dot {
+            background-color: #a855f7;
+            transform: scale(1.2);
+            box-shadow: 0 0 0 6px rgba(168, 85, 247, 0.25);
+        }
+        .timeline-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.8125rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            background-color: rgba(79, 70, 229, 0.1);
+            color: #4f46e5;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+        .dark .timeline-badge {
+            background-color: rgba(165, 180, 252, 0.1);
+            color: #a5b4fc;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PF88MNRG"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Header Navigation Bar -->
+    <nav id="navbar" class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md transition-all duration-300 dark:border-slate-800/80 dark:bg-slate-950/80">
+        <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
+            <!-- Logo -->
+            <a href="#" class="font-display text-2xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400">
+                WK<span class="text-slate-900 dark:text-white">.dev</span>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden items-center space-x-8 md:flex">
+                <a href="#about" class="nav-link font-medium text-slate-600 transition-colors hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">About</a>
+                <a href="#skills" class="nav-link font-medium text-slate-600 transition-colors hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">Skills</a>
+                <a href="#portfolio" class="nav-link font-medium text-slate-600 transition-colors hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">Experience</a>
+                <a href="#contact" class="nav-link font-medium text-slate-600 transition-colors hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">Contact</a>
+            </div>
+
+            <!-- Actions -->
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" type="button" class="rounded-lg p-2.5 text-sm text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-4 focus:ring-slate-200 dark:text-slate-400 dark:hover:bg-slate-800 dark:focus:ring-slate-700" aria-label="Toggle dark mode">
+                    <!-- Dark Icon (Moon) -->
+                    <svg id="theme-toggle-dark-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                    <!-- Light Icon (Sun) -->
+                    <svg id="theme-toggle-light-icon" class="hidden h-5 w-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464a1 1 0 10-1.414-1.414l-.707.707a1 1 0 001.414 1.414l.707-.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 100 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" type="button" class="inline-flex items-center rounded-lg p-2 text-sm text-slate-500 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-slate-200 md:hidden dark:text-slate-400 dark:hover:bg-slate-800 dark:focus:ring-slate-700" aria-controls="mobile-menu" aria-expanded="false">
+                    <span class="sr-only">Open main menu</span>
+                    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden border-t border-slate-200 bg-white px-6 py-4 dark:border-slate-800 dark:bg-slate-950 md:hidden">
+            <div class="flex flex-col space-y-4">
+                <a href="#about" class="mobile-nav-link font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">About</a>
+                <a href="#skills" class="mobile-nav-link font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">Skills</a>
+                <a href="#portfolio" class="mobile-nav-link font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">Experience</a>
+                <a href="#contact" class="mobile-nav-link font-medium text-slate-600 hover:text-indigo-600 dark:text-slate-300 dark:hover:text-indigo-400">Contact</a>
+            </div>
+        </div>
+    </nav>
     <!-- Header / Hero Section -->
-    <header class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-24 text-center shadow-lg rounded-b-3xl">
-        <div class="container flex flex-col items-center">
-            <img src="https://placehold.co/120x120/a78bfa/ffffff?text=WK" alt="Wai Myo Kyaw Profile" class="w-32 h-32 rounded-full mb-6 ring-4 ring-white ring-opacity-50">
-            <h1 class="text-5xl md:text-6xl font-bold mb-4 leading-tight">Wai Myo Kyaw</h1>
-            <p class="text-xl md:text-2xl mb-8 font-light">Senior Full Stack Developer | Lead Digital Developer</p>
-            <p class="text-lg md:text-xl max-w-3xl mb-10 font-normal">
-                Driving Innovation with 20 Years of Full Stack Expertise in Enterprise Solutions across <strong class="font-semibold">Singapore</strong>, Thailand, and Myanmar.
+    <header class="relative overflow-hidden bg-gradient-to-br from-indigo-50 via-white to-purple-50 py-24 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 text-center transition-colors duration-300">
+        <!-- Abstract Dot/Grid Background Pattern -->
+        <div class="absolute inset-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:14px_24px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)]"></div>
+        
+        <!-- Glowing gradient blobs for rich aesthetics -->
+        <div class="absolute -top-40 left-1/3 h-[300px] w-[300px] rounded-full bg-indigo-500/10 blur-[100px] dark:bg-indigo-500/5"></div>
+        <div class="absolute -bottom-40 right-1/3 h-[300px] w-[300px] rounded-full bg-purple-500/10 blur-[100px] dark:bg-purple-500/5"></div>
+
+        <div class="container relative flex flex-col items-center">
+            <!-- Profile Avatar with dynamic double ring glow -->
+            <div class="relative mb-8">
+                <div class="absolute inset-0 animate-pulse rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 opacity-30 blur-md"></div>
+                <img src="profile.png" alt="Wai Myo Kyaw Profile" class="relative z-10 w-32 h-32 rounded-full object-cover shadow-xl ring-4 ring-white dark:ring-slate-900 ring-offset-2 ring-offset-indigo-600 dark:ring-offset-indigo-500">
+            </div>
+            
+            <span class="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-sm font-medium text-indigo-700 ring-1 ring-inset ring-indigo-700/10 dark:bg-indigo-500/10 dark:text-indigo-400 dark:ring-indigo-400/20 mb-4">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Available for Projects & Relocation
+            </span>
+
+            <h1 class="font-display text-5xl md:text-7xl font-extrabold tracking-tight mb-4 text-slate-950 dark:text-white leading-tight">
+                Wai Myo Kyaw
+            </h1>
+            
+            <p class="font-display text-xl md:text-2xl font-semibold mb-8 text-indigo-600 dark:text-indigo-400 max-w-2xl">
+                Senior Full Stack Developer & Lead Digital Developer
             </p>
-            <div class="flex flex-col sm:flex-row gap-4">
-                <a href="#portfolio" class="btn-primary">View My Work</a>
+            
+            <p class="text-lg md:text-xl max-w-3xl mb-10 text-slate-600 dark:text-slate-400 font-light leading-relaxed">
+                Driving innovation with <span class="font-semibold text-slate-900 dark:text-white">20 years of full-stack expertise</span> in enterprise web, mobile, and cloud environments across <span class="font-semibold text-slate-900 dark:text-white">Singapore</span>, Thailand, and Myanmar.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 items-center justify-center">
+                <a href="#portfolio" class="btn-primary gap-2">
+                    <span>View My Work</span>
+                    <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
                 <!-- WhatsApp Button -->
-                <a href="https://wa.me/66953064462" target="_blank" class="btn-secondary">WhatsApp +66 953064462</a>
+                <a href="https://wa.me/66953064462" target="_blank" class="btn-secondary gap-2">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
             </div>
         </div>
     </header>
@@ -169,350 +409,588 @@
         </section>
 
         <!-- Key Expertise / Skills Section -->
-        <section id="skills" class="mb-16">
+        <section id="skills" class="mb-20">
             <h2 class="section-heading">Key Expertise & Skills</h2>
-            <div class="card">
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Web Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Web Design, Development and Management</span>
-                        <span class="tag">Frontend (HTML, HTML5, CSS, SCSS, JavaScript, VueJS, jQuery, AngularJS)</span>
-                        <span class="tag">Backend (Web API, REST API, SOAP API, MVC)</span>
-                        <span class="tag">System Integration</span>
-                        <span class="tag">WordPress</span>
-                        <span class="tag">WooCommerce</span>
-                        <span class="tag">WordPress REST API</span>
-                        <span class="tag">Directus</span>
-                        <span class="tag">Django</span>
-                        <span class="tag">Umbraco</span>
-                        <span class="tag">Entity Framework</span>
-                        <span class="tag">.NET Framework</span>
-                        <span class="tag">.NET Core</span>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1: Web Development -->
+                <div class="card p-6 !mb-0 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center">
+                            <i class="fa-solid fa-code text-indigo-500 mr-2.5 text-lg"></i>
+                            Web Development
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tag">Web Design & Management</span>
+                            <span class="tag">Frontend (HTML5, CSS, SCSS, JS)</span>
+                            <span class="tag">VueJS</span>
+                            <span class="tag">AngularJS</span>
+                            <span class="tag">jQuery</span>
+                            <span class="tag">Backend (Web API, REST, SOAP)</span>
+                            <span class="tag">System Integration</span>
+                            <span class="tag">WordPress & WooCommerce</span>
+                            <span class="tag">Directus API</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Umbraco</span>
+                            <span class="tag">Entity Framework</span>
+                            <span class="tag">.NET Core / Framework</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Programming Languages</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">C#.NET</span>
-                        <span class="tag">NodeJS</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">PHP</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">Dart</span><span class="tag">Kotlin</span>
-                        <span class="tag">VB.NET</span>
-                        <span class="tag">Objective-C</span>
+                <!-- Card 2: Programming Languages -->
+                <div class="card p-6 !mb-0 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center">
+                            <i class="fa-solid fa-terminal text-indigo-500 mr-2.5 text-lg"></i>
+                            Programming Languages
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tag">C#.NET</span>
+                            <span class="tag">NodeJS</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">PHP</span>
+                            <span class="tag">Java</span>
+                            <span class="tag">Dart</span>
+                            <span class="tag">Kotlin</span>
+                            <span class="tag">VB.NET</span>
+                            <span class="tag">Objective-C</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Database Design & Management</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Database Design & Development</span>
-                        <span class="tag">MS SQL Server</span>
-                        <span class="tag">Oracle</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">RavenDB</span>
-                        <span class="tag">SQLite</span>
-                        <span class="tag">FoxPro</span>
+                <!-- Card 3: Database Design -->
+                <div class="card p-6 !mb-0 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center">
+                            <i class="fa-solid fa-database text-indigo-500 mr-2.5 text-lg"></i>
+                            Database Management
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tag">MS SQL Server</span>
+                            <span class="tag">Oracle</span>
+                            <span class="tag">MySQL</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">MongoDB</span>
+                            <span class="tag">RavenDB</span>
+                            <span class="tag">SQLite</span>
+                            <span class="tag">FoxPro</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Mobile Application Development</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Flutter</span>
-                        <span class="tag">iOS</span>
-                        <span class="tag">Android</span>
-                        <span class="tag">Hybrid</span>
+                <!-- Card 4: Mobile Development -->
+                <div class="card p-6 !mb-0 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center">
+                            <i class="fa-solid fa-mobile-screen-button text-indigo-500 mr-2.5 text-lg"></i>
+                            Mobile Development
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tag">Flutter</span>
+                            <span class="tag">iOS (Objective-C)</span>
+                            <span class="tag">Android (Kotlin/Java)</span>
+                            <span class="tag">Hybrid Apps</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">DevOps & Cloud</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">CI/CD Pipelines</span>
-                        <span class="tag">GitHub Actions</span>
-                        <span class="tag">GitLab Pipelines</span>
-                        <span class="tag">Google Cloud Platform</span>
-                        <span class="tag">AWS Lightsail Cloud</span>
-                        <span class="tag">Cloudways</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Kubernetes</span>
+                <!-- Card 5: DevOps & Cloud -->
+                <div class="card p-6 !mb-0 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center">
+                            <i class="fa-solid fa-cloud-arrow-up text-indigo-500 mr-2.5 text-lg"></i>
+                            DevOps & Cloud
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tag">CI/CD Pipelines</span>
+                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">GitLab Pipelines</span>
+                            <span class="tag">Google Cloud (GCP)</span>
+                            <span class="tag">AWS Lightsail</span>
+                            <span class="tag">Cloudways</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Kubernetes</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Project Management & Collaboration</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">JIRA</span>
-                        <span class="tag">Monday platforms</span>
-                        <span class="tag">Scrum</span>
-                        <span class="tag">Agile</span>
-                        <span class="tag">Kanban boards</span>
-                        <span class="tag">Git</span>
+                <!-- Card 6: PM & Collaboration -->
+                <div class="card p-6 !mb-0 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center">
+                            <i class="fa-solid fa-people-group text-indigo-500 mr-2.5 text-lg"></i>
+                            Management & Agile
+                        </h3>
+                        <div class="flex flex-wrap gap-1">
+                            <span class="tag">JIRA</span>
+                            <span class="tag">Asana</span>
+                            <span class="tag">Monday.com</span>
+                            <span class="tag">Scrum / Agile</span>
+                            <span class="tag">Kanban Boards</span>
+                            <span class="tag">Git Version Control</span>
+                            <span class="tag">System Analysis & Design</span>
+                        </div>
                     </div>
                 </div>
 
-                <div class="mb-6">
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">System Analysis & Design</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">System Analysis and Design</span>
-                    </div>
-                </div>
-
-                <div>
-                    <h3 class="text-2xl font-semibold mb-3 text-indigo-700">Monitoring & Analytics</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">Google Analytics 4</span>
-                        <span class="tag">Google Tag Manager</span>
-                        <span class="tag">Google Search Console</span>
+                <!-- Card 7: Monitoring & Analytics -->
+                <div class="card p-6 !mb-0 lg:col-span-3 flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-slate-800 dark:text-slate-100 flex items-center lg:justify-center">
+                            <i class="fa-solid fa-chart-line text-indigo-500 mr-2.5 text-lg"></i>
+                            Monitoring & Analytics
+                        </h3>
+                        <div class="flex flex-wrap gap-1 lg:justify-center">
+                            <span class="tag">Google Analytics 4</span>
+                            <span class="tag">Google Tag Manager</span>
+                            <span class="tag">Google Search Console</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Professional Experience / Portfolio Section -->
-        <section id="portfolio" class="mb-16">
+        <section id="portfolio" class="mb-20">
             <h2 class="section-heading">Professional Experience & Projects</h2>
 
-            <!-- Project 1: Luxury Resort Management -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Enterprise Web Application & Digital Platform Lead</h3>
-                <p class="text-lg text-gray-600 mb-4">Senior Full Stack Developer / Lead Digital Developer at Luxury Resort Management Co.,LTD., Thailand (Aug 2021 – Present)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Playing a key role in developing, supporting, and advancing enterprise web applications and servers within the Digital Marketing team.</li>
-                    <li>Implemented and trained the team to work with JIRA boards, enhancing project management efficiency using SCRUM and Agile.</li>
-                    <li>Managed projects and Git repositories, establishing robust CI/CD pipelines.</li>
-                    <li>Successfully managed server and application deployments on various cloud platforms, including AWS Lightsail, Google Cloud Platform, and Cloudways.</li>
-                    <li>Oversaw external API integrations (e.g., Sabre Synxis Booking Engine, Pomelo Pay) and coordinated vendor relationships, achieving certification in booking engine API integration.</li>
-                    <li>Conducted rigorous testing and quality assurance for applications on multiple devices and browsers.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">NodeJS</span><span class="tag">Python</span><span class="tag">VueJS</span><span class="tag">Web API</span><span class="tag">REST API</span><span class="tag">SOAP API</span><span class="tag">WordPress</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SCSS</span><span class="tag">MySQL</span><span class="tag">MS SQL Server</span><span class="tag">MongoDB</span><span class="tag">Github Actions</span><span class="tag">Gitlab Pipelines</span><span class="tag">Google Cloud Platform</span><span class="tag">AWS Lightsail</span><span class="tag">Cloudways</span><span class="tag">JIRA</span><span class="tag">Agile</span>
+            <div class="timeline-container">
+
+                <!-- Maharbawga Finance Co.,LTD -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Oct 2025 – Present</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Senior Full Stack Developer & Product Development Lead</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Maharbawga Finance Co.,LTD, Myanmar</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Led the selection of technology stacks for the development team's diverse project portfolio.</li>
+                            <li>Managed and directed the development and DevOps teams to guarantee the successful and timely deployment of projects.</li>
+                            <li>Liaised with international and local finance, banking, and telco partners to manage system and API integrations, specifically focusing on mobile wallet and bank account fund transfers.</li>
+                            <li>Monitored the daily development progress and activities of the entire development team.</li>
+                            <li>Full stack application development including UI/UX and QA process.</li>
+                            <li>Business Analysis</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Key Focus Areas</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">System Integration</span><span class="tag">API Integration</span><span class="tag">Mobile Wallet</span><span class="tag">DevOps</span><span class="tag">Team Management</span><span class="tag">Full Stack Development</span><span class="tag">UI/UX</span><span class="tag">QA Process</span><span class="tag">Business Analysis</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 2: DTGO Corporations Limited -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Enterprise Application Development</h3>
-                <p class="text-lg text-gray-600 mb-4">Senior Full Stack Developer at DTGO Corporations Limited, Thailand (Jun 2019 – Aug 2021)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Collaborated within an Agile/Scrum team to develop and maintain critical enterprise applications.</li>
-                    <li>Designed and managed complex backend API and database systems.</li>
-                    <li>Created and maintained engaging front-end and mobile applications.</li>
-                    <li>Efficiently managed tickets and project progress using Scrum, JIRA, and Kanban boards.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">NodeJS</span><span class="tag">Javascript</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Dart</span><span class="tag">VueJS</span><span class="tag">Directus</span><span class="tag">Django</span><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Github Actions</span><span class="tag">Gitlab Pipelines</span><span class="tag">Google Cloud Platform</span><span class="tag">AWS Lightsail</span><span class="tag">JIRA</span><span class="tag">Scrum</span>
+                <!-- Project 1: Luxury Resort Management -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Aug 2021 – Sep 2025</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Enterprise Web Application & Digital Platform Lead</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Senior Full Stack Developer / Lead Digital Developer at Luxury Resort Management Co., LTD., Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Playing a key role in developing, supporting, and advancing enterprise web applications and servers within the Digital Marketing team.</li>
+                            <li>Implemented and trained the team to work with JIRA boards, enhancing project management efficiency using SCRUM and Agile.</li>
+                            <li>Managed projects and Git repositories, establishing robust CI/CD pipelines.</li>
+                            <li>Successfully managed server and application deployments on various cloud platforms, including AWS Lightsail, Google Cloud Platform, and Cloudways.</li>
+                            <li>Oversaw external API integrations (e.g., Sabre Synxis Booking Engine, Pomelo Pay) and coordinated vendor relationships, achieving certification in booking engine API integration.</li>
+                            <li>Conducted rigorous testing and quality assurance for applications on multiple devices and browsers.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">PHP</span><span class="tag">JavaScript</span><span class="tag">NodeJS</span><span class="tag">Python</span><span class="tag">VueJS</span><span class="tag">Web API</span><span class="tag">REST API</span><span class="tag">SOAP API</span><span class="tag">WordPress</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SCSS</span><span class="tag">MySQL</span><span class="tag">MS SQL Server</span><span class="tag">MongoDB</span><span class="tag">Github Actions</span><span class="tag">Gitlab Pipelines</span><span class="tag">Google Cloud Platform</span><span class="tag">AWS Lightsail</span><span class="tag">Cloudways</span><span class="tag">JIRA</span><span class="tag">Agile</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 3: MyJobs.com.mm -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Job Search Portal & Messenger Bot Engine</h3>
-                <p class="text-lg text-gray-600 mb-4">Senior Backend API Developer at MyJobs.com.mm, Myanmar (Dec 2018 – May 2019)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Collaborated as a key member of the Agile/Scrum development team to create a job search portal, enhancing the user experience for job seekers and employers.</li>
-                    <li>Designed, developed, and maintained backend APIs and database systems to ensure efficient data retrieval and storage.</li>
-                    <li>Spearheaded the creation and management of a Messenger Bot engine, streamlining communication and interactions within the system.</li>
-                    <li>Managed tickets and tracked project progress using Agile methodologies, including Scrum, JIRA, and Kanban boards.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">NodeJS</span><span class="tag">Python</span><span class="tag">VueJs</span><span class="tag">Facebook Messenger Platform</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">JIRA</span><span class="tag">Scrum</span><span class="tag">Agile</span>
+                <!-- Project 2: DTGO Corporations Limited -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Jun 2019 – Aug 2021</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Enterprise Application Development</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Senior Full Stack Developer at DTGO Corporations Limited, Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Collaborated within an Agile/Scrum team to develop and maintain critical enterprise applications.</li>
+                            <li>Designed and managed complex backend API and database systems.</li>
+                            <li>Created and maintained engaging front-end and mobile applications.</li>
+                            <li>Efficiently managed tickets and project progress using Scrum, JIRA, and Kanban boards.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">NodeJS</span><span class="tag">Javascript</span><span class="tag">Python</span><span class="tag">Java</span><span class="tag">Dart</span><span class="tag">VueJS</span><span class="tag">Directus</span><span class="tag">Django</span><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Kotlin</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">Github Actions</span><span class="tag">Gitlab Pipelines</span><span class="tag">Google Cloud Platform</span><span class="tag">AWS Lightsail</span><span class="tag">JIRA</span><span class="tag">Scrum</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 4: Nexsource Co., LTD -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">CRM System Development & Integrations</h3>
-                <p class="text-lg text-gray-600 mb-4">Senior Software Engineer at Nexsource Co., LTD, Thailand (Jan 2017 – Nov 2018)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Designed and developed a CRM system, streamlining customer relationship management.</li>
-                    <li>Integrated email and calendar systems with Gmail and Exchange server to enhance communication and scheduling.</li>
-                    <li>Integrated with Asterisk PBX Server for initiating calls through the CRM system and logging call information.</li>
-                    <li>Conducted data mapping and migration between MySQL, MSSQL, and RavenDB databases.</li>
-                    <li>Efficiently managed project tasks using Scrum, JIRA, and Kanban boards.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">C#.NET</span><span class="tag">MVC</span><span class="tag">Web API</span><span class="tag">.NET Framework</span><span class="tag">.NET Core</span><span class="tag">Umbraco</span><span class="tag">jQuery</span><span class="tag">AngularJS</span><span class="tag">MS SQL Server</span><span class="tag">RavenDB</span><span class="tag">Asterisk PBX</span><span class="tag">Exchange SDK</span><span class="tag">Scrum</span><span class="tag">JIRA</span>
+                <!-- Project 3: MyJobs.com.mm -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Dec 2018 – May 2019</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Job Search Portal & Messenger Bot Engine</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Senior Backend API Developer at MyJobs.com.mm, Myanmar</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Collaborated as a key member of the Agile/Scrum development team to create a job search portal, enhancing the user experience for job seekers and employers.</li>
+                            <li>Designed, developed, and maintained backend APIs and database systems to ensure efficient data retrieval and storage.</li>
+                            <li>Spearheaded the creation and management of a Messenger Bot engine, streamlining communication and interactions within the system.</li>
+                            <li>Managed tickets and tracked project progress using Agile methodologies, including Scrum, JIRA, and Kanban boards.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">NodeJS</span><span class="tag">Python</span><span class="tag">VueJs</span><span class="tag">Facebook Messenger Platform</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span><span class="tag">JIRA</span><span class="tag">Scrum</span><span class="tag">Agile</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 5: DTC Enterprise Co., Ltd (2014-2017) -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">MDVR Video & Service Management Systems</h3>
-                <p class="text-lg text-gray-600 mb-4">Analyst Programmer at DTC Enterprise Co., Ltd, Thailand (May 2014 – Jan 2017)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Successfully coordinated between overseas software vendors and the local project team to implement an MDVR video backup backend system.</li>
-                    <li>Developed a Windows application for receiving live video streams from mobile DVR devices, storing and managing files on the server.</li>
-                    <li>Created a file management web application for searching and downloading recordings based on time and date.</li>
-                    <li>Designed and developed a timeline web application from scratch for service employee monitoring, featuring daily timelines and data synchronization with web services.</li>
-                    <li>Built an Android mobile application for service members to check-in and upload data and photos to the server.</li>
-                    <li>Developed a web application for service project and tasks management, including requirement collection and database design.</li>
-                    <li>Performed system integration and implemented solutions in UAT and Production environments.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">C#.NET</span><span class="tag">.NET Framework</span><span class="tag">Java</span><span class="tag">PHP</span><span class="tag">NodeJS</span><span class="tag">jQuery</span><span class="tag">AngularJS</span><span class="tag">MS SQL Server</span><span class="tag">Oracle</span><span class="tag">SQLite</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span>
+                <!-- Project 4: Nexsource Co., LTD -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Jan 2017 – Nov 2018</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">CRM System Development & Integrations</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Senior Software Engineer at Nexsource Co., LTD, Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Designed and developed a CRM system, streamlining customer relationship management.</li>
+                            <li>Integrated email and calendar systems with Gmail and Exchange server to enhance communication and scheduling.</li>
+                            <li>Integrated with Asterisk PBX Server for initiating calls through the CRM system and logging call information.</li>
+                            <li>Conducted data mapping and migration between MySQL, MSSQL, and RavenDB databases.</li>
+                            <li>Efficiently managed project tasks using Scrum, JIRA, and Kanban boards.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">C#.NET</span><span class="tag">MVC</span><span class="tag">Web API</span><span class="tag">.NET Framework</span><span class="tag">.NET Core</span><span class="tag">Umbraco</span><span class="tag">jQuery</span><span class="tag">AngularJS</span><span class="tag">MS SQL Server</span><span class="tag">RavenDB</span><span class="tag">Asterisk PBX</span><span class="tag">Exchange SDK</span><span class="tag">Scrum</span><span class="tag">JIRA</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 6: TO&I Co., Ltd -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Digital Solutions Development & Maintenance</h3>
-                <p class="text-lg text-gray-600 mb-4">Programmer/Web Master at TO&I Co., Ltd, Thailand (Oct 2011 – Jun 2013)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Developed and maintained a wide spectrum of digital solutions, including web applications, web services, Windows applications, and mobile applications.</li>
-                    <li>Designed and built web applications and iOS applications specifically for iPhone and iPad, expanding the company's digital presence and accessibility.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">Entity Framework</span><span class="tag">C#.NET</span><span class="tag">jQuery</span><span class="tag">Ajax</span><span class="tag">PHP</span><span class="tag">Objective-C</span><span class="tag">Xcode</span><span class="tag">MS SQL Server</span><span class="tag">SQLite</span><span class="tag">MySQL</span>
+                <!-- Project 5: DTC Enterprise Co., Ltd -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">May 2014 – Jan 2017</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">MDVR Video & Service Management Systems</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Analyst Programmer at DTC Enterprise Co., Ltd, Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Successfully coordinated between overseas software vendors and the local project team to implement an MDVR video backup backend system.</li>
+                            <li>Developed a Windows application for receiving live video streams from mobile DVR devices, storing and managing files on the server.</li>
+                            <li>Created a file management web application for searching and downloading recordings based on time and date.</li>
+                            <li>Designed and developed a timeline web application from scratch for service employee monitoring, featuring daily timelines and data synchronization with web services.</li>
+                            <li>Built an Android mobile application for service members to check-in and upload data and photos to the server.</li>
+                            <li>Developed a web application for service project and tasks management, including requirement collection and database design.</li>
+                            <li>Performed system integration and implemented solutions in UAT and Production environments.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">C#.NET</span><span class="tag">.NET Framework</span><span class="tag">Java</span><span class="tag">PHP</span><span class="tag">NodeJS</span><span class="tag">jQuery</span><span class="tag">AngularJS</span><span class="tag">MS SQL Server</span><span class="tag">Oracle</span><span class="tag">SQLite</span><span class="tag">MySQL</span><span class="tag">MongoDB</span><span class="tag">PostgreSQL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 7: Carpass Information Services Co., Ltd -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Vehicle Tracking & Fleet Management System</h3>
-                <p class="text-lg text-gray-600 mb-4">Programmer at Carpass Information Services Co., Ltd, Thailand (Jun 2011 – Aug 2011)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Developed and maintained web applications with a focus on creating a back-office web application for vehicle tracking and fleet management.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">Entity Framework</span><span class="tag">C#.NET</span><span class="tag">MS SQL Server</span>
+                <!-- Project 6: TO&I Co., Ltd -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Oct 2011 – Jun 2013</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Digital Solutions Development & Maintenance</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Programmer/Web Master at TO&I Co., Ltd, Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Developed and maintained a wide spectrum of digital solutions, including web applications, web services, Windows applications, and mobile applications.</li>
+                            <li>Designed and built web applications and iOS applications specifically for iPhone and iPad, expanding the company's digital presence and accessibility.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">Entity Framework</span><span class="tag">C#.NET</span><span class="tag">jQuery</span><span class="tag">Ajax</span><span class="tag">PHP</span><span class="tag">Objective-C</span><span class="tag">Xcode</span><span class="tag">MS SQL Server</span><span class="tag">SQLite</span><span class="tag">MySQL</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 8: DTC Enterprise Co., Ltd (2009-2011) -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Vehicle & Personal Tracking Applications</h3>
-                <p class="text-lg text-gray-600 mb-4">Programmer at DTC Enterprise Co., Ltd, Thailand (Apr 2009 – Jan 2011)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Developed custom applications to provide comprehensive reporting features for vehicle tracking and status records, improving data visualization and analysis.</li>
-                    <li>Designed and built personal tracking applications for Nokia, Samsung, and HTC PDA and mobile phones.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">C#.NET</span><span class="tag">VB.NET</span><span class="tag">Symbian C++</span><span class="tag">Windows Mobile</span><span class="tag">MS SQL Server</span>
+                <!-- Project 7: Carpass Information Services Co., Ltd -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Jun 2011 – Aug 2011</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Vehicle Tracking & Fleet Management System</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Programmer at Carpass Information Services Co., Ltd, Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Developed and maintained web applications with a focus on creating a back-office web application for vehicle tracking and fleet management.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">Entity Framework</span><span class="tag">C#.NET</span><span class="tag">MS SQL Server</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 9: Phillip Securities Pte Ltd (Singapore) -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Insurance Agent Management & Reporting System</h3>
-                <p class="text-lg text-gray-600 mb-4">Analyst Programmer at Phillip Securities Pte Ltd, <strong class="font-semibold text-indigo-800">Singapore</strong> (Jan 2008 – Feb 2009)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Developed and maintained web applications for reporting, payouts, and training management for insurance agents.</li>
-                    <li>Created and optimized complex stored procedures to analyze data and generate ad-hoc reports, significantly enhancing data-driven decision-making.</li>
-                    <li>Collected user requirements and designed databases to support the organization's strategic objectives.</li>
-                    <li>Prepared comprehensive Software Requirement Specification (SRS) documents and meticulously designed test cases for UAT and QA phases.</li>
-                    <li>Successfully integrated and implemented systems, ensuring a seamless transition to UAT and Production environments.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">C#.NET</span><span class="tag">ASP</span><span class="tag">MS SQL Server</span>
+                <!-- Project 8: DTC Enterprise Co., Ltd -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Apr 2009 – Jan 2011</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Vehicle & Personal Tracking Applications</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Programmer at DTC Enterprise Co., Ltd, Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Developed custom applications to provide comprehensive reporting features for vehicle tracking and status records, improving data visualization and analysis.</li>
+                            <li>Designed and built personal tracking applications for Nokia, Samsung, and HTC PDA and mobile phones.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">C#.NET</span><span class="tag">VB.NET</span><span class="tag">Symbian C++</span><span class="tag">Windows Mobile</span><span class="tag">MS SQL Server</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 10: Zapper Services PTE LTD (Singapore) -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Web-based HR Management System Development</h3>
-                <p class="text-lg text-gray-600 mb-4">Programmer at Zapper Services PTE LTD, <strong class="font-semibold text-indigo-800">Singapore</strong> (Aug 2006 – Jan 2008)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Developed and provided ongoing maintenance for a web-based HR Management System.</li>
-                    <li>Implemented and managed essential data export procedures using FoxPro to seamlessly transfer data to the HR & Payroll management system, enhancing data synchronization and accessibility.</li>
-                    <li>Conducted rigorous testing and quality assurance for applications on multiple devices and browsers.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">ASP</span><span class="tag">VB.NET</span><span class="tag">MS SQL Server</span><span class="tag">FoxPro</span>
+                <!-- Project 9: Phillip Securities Pte Ltd -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Jan 2008 – Feb 2009</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Insurance Agent Management & Reporting System</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Analyst Programmer at Phillip Securities Pte Ltd, Singapore</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Developed and maintained web applications for reporting, payouts, and training management for insurance agents.</li>
+                            <li>Created and optimized complex stored procedures to analyze data and generate ad-hoc reports, significantly enhancing data-driven decision-making.</li>
+                            <li>Collected user requirements and designed databases to support the organization's strategic objectives.</li>
+                            <li>Prepared comprehensive Software Requirement Specification (SRS) documents and meticulously designed test cases for UAT and QA phases.</li>
+                            <li>Successfully integrated and implemented systems, ensuring a seamless transition to UAT and Production environments.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">C#.NET</span><span class="tag">ASP</span><span class="tag">MS SQL Server</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 11: Thipparath Business Group (Thailand) -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Heavy Machinery Rental Management System Conversion</h3>
-                <p class="text-lg text-gray-600 mb-4">Programmer at Thipparath Business Group (Thailand) Co., Ltd., Thailand (Jun 2005 – Feb 2006)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Successfully converted an existing JSP web application into a C#.NET web application tailored for a heavy machinery rental management system, significantly enhancing system efficiency.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">Java</span><span class="tag">JSP</span><span class="tag">C#.NET</span><span class="tag">MS SQL Server</span>
+                <!-- Project 10: Zapper Services PTE LTD -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Aug 2006 – Jan 2008</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Web-based HR Management System Development</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Programmer at Zapper Services PTE LTD, Singapore</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Developed and provided ongoing maintenance for a web-based HR Management System.</li>
+                            <li>Implemented and managed essential data export procedures using FoxPro to seamlessly transfer data to the HR & Payroll management system, enhancing data synchronization and accessibility.</li>
+                            <li>Conducted rigorous testing and quality assurance for applications on multiple devices and browsers.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">ASP</span><span class="tag">VB.NET</span><span class="tag">MS SQL Server</span><span class="tag">FoxPro</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Project 12: Myanmar Computer Company Limited -->
-            <div class="card">
-                <h3 class="text-2xl font-semibold mb-2 text-indigo-700">Yangon City Web Portal & E-Office Systems</h3>
-                <p class="text-lg text-gray-600 mb-4">Programmer at Myanmar Computer Company Limited, Myanmar (Apr 2001 – Feb 2005)</p>
-                <ul class="list-disc list-inside space-y-2 text-md">
-                    <li>Involved in designing, developing, and maintaining systems and databases for the Yangon City web portal.</li>
-                    <li>Designed and built a comprehensive HR management system, an E-Office Management System, and an electronic bill collecting system.</li>
-                    <li>Actively engaged with end-users, collecting requirements, and translating them into well-designed databases and systems.</li>
-                </ul>
-                <div class="mt-4">
-                    <p class="font-semibold text-gray-700">Technologies Utilized:</p>
-                    <div class="flex flex-wrap gap-2 mt-1">
-                        <span class="tag">C#.NET</span><span class="tag">ASP</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Java Servlets</span><span class="tag">JSP</span><span class="tag">MS SQL Server</span>
+                <!-- Project 11: Thipparath Business Group -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Jun 2005 – Feb 2006</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Heavy Machinery Rental Management System Conversion</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Programmer at Thipparath Business Group (Thailand) Co., Ltd., Thailand</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Successfully converted an existing JSP web application into a C#.NET web application tailored for a heavy machinery rental management system, significantly enhancing system efficiency.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">Java</span><span class="tag">JSP</span><span class="tag">C#.NET</span><span class="tag">MS SQL Server</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
+                <!-- Project 12: Myanmar Computer Company Limited -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="card p-6 !mb-0">
+                        <span class="timeline-badge">Apr 2001 – Feb 2005</span>
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-1">Yangon City Web Portal & E-Office Systems</h3>
+                        <p class="text-indigo-600 dark:text-indigo-400 font-semibold mb-4 text-md">Programmer at Myanmar Computer Company Limited, Myanmar</p>
+                        <ul class="list-disc list-inside space-y-2 text-slate-600 dark:text-slate-400 text-sm mb-4">
+                            <li>Involved in designing, developing, and maintaining systems and databases for the Yangon City web portal.</li>
+                            <li>Designed and built a comprehensive HR management system, an E-Office Management System, and an electronic bill collecting system.</li>
+                            <li>Actively engaged with end-users, collecting requirements, and translating them into well-designed databases and systems.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t border-slate-100 dark:border-slate-800">
+                            <p class="font-bold text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider mb-2">Technologies Utilized</p>
+                            <div class="flex flex-wrap gap-1">
+                                <span class="tag">C#.NET</span><span class="tag">ASP</span><span class="tag">JavaScript</span><span class="tag">Java</span><span class="tag">Java Servlets</span><span class="tag">JSP</span><span class="tag">MS SQL Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="mb-16">
+        <section id="contact" class="mb-20">
             <h2 class="section-heading">Get in Touch</h2>
-            <div class="card text-center">
-                <p class="text-lg mb-4">
-                    I'm always open to discussing new projects, collaborations, or opportunities.
-                    Feel free to reach out!
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="mailto:waikyaw9999@gmail.com" class="btn-primary">Email Me</a>
-                    <a href="https://wa.me/66953064462" target="_blank" class="btn-secondary">WhatsApp +66 953064462</a>
+            <div class="card p-8 md:p-12 relative overflow-hidden transition-colors duration-300">
+                <!-- Decorative background elements -->
+                <div class="absolute top-0 right-0 h-40 w-40 rounded-full bg-indigo-500/5 blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-purple-500/5 blur-3xl"></div>
+                
+                <div class="relative z-10 max-w-3xl mx-auto text-center">
+                    <span class="inline-flex items-center gap-1.5 rounded-full bg-indigo-50 px-3 py-1 text-xs font-semibold text-indigo-700 dark:bg-indigo-500/10 dark:text-indigo-400 mb-6">
+                        Contact Info
+                    </span>
+                    <h3 class="text-3xl font-extrabold text-slate-900 dark:text-white mb-4">Let's Create Something Great Together</h3>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto font-light">
+                        I'm always open to discussing new projects, technical design, architecture reviews, or full-time opportunities.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 text-left">
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                            <div class="h-10 w-10 rounded-lg bg-indigo-500/10 dark:bg-indigo-400/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                                <i class="fa-solid fa-envelope text-lg"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">Email Address</p>
+                                <a href="mailto:waikyaw9999@gmail.com" class="text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">waikyaw9999@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center gap-3 p-4 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800">
+                            <div class="h-10 w-10 rounded-lg bg-indigo-500/10 dark:bg-indigo-400/10 flex items-center justify-center text-indigo-600 dark:text-indigo-400">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 dark:text-slate-400 font-semibold uppercase tracking-wider">WhatsApp Chat</p>
+                                <a href="https://wa.me/66953064462" target="_blank" class="text-sm font-bold text-slate-800 dark:text-slate-200 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">+66 953064462</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row justify-center gap-4">
+                        <a href="mailto:waikyaw9999@gmail.com" class="btn-primary gap-2 justify-center">
+                            <i class="fa-solid fa-paper-plane text-sm"></i>
+                            <span>Send Email</span>
+                        </a>
+                        <a href="https://wa.me/66953064462" target="_blank" class="btn-secondary gap-2 justify-center">
+                            <i class="fa-brands fa-whatsapp text-lg"></i>
+                            <span>Chat on WhatsApp</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
 
     </main>
 
-    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-3xl">
-        <div class="container">
-            <p>&copy; 2025 Wai Myo Kyaw. All rights reserved.</p>
+    <footer class="bg-white dark:bg-slate-950 text-slate-500 dark:text-slate-400 py-12 text-center border-t border-slate-100 dark:border-slate-900 transition-colors duration-300">
+        <div class="container mx-auto px-4">
+            <p class="font-display text-lg font-bold text-slate-800 dark:text-white mb-4">Wai Myo Kyaw</p>
+            <p class="text-sm max-w-md mx-auto mb-6 font-light">
+                Senior Full Stack Developer specializing in building enterprise web, mobile, and cloud environments with 20+ years of proven delivery.
+            </p>
+            <div class="flex justify-center gap-6 mb-8 text-lg">
+                <a href="mailto:waikyaw9999@gmail.com" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://wa.me/66953064462" target="_blank" class="hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+            <p class="text-xs">&copy; 2026 Wai Myo Kyaw. All rights reserved.</p>
         </div>
     </footer>
 
+    <script>
+        // -------------------------
+        // Dark Mode Toggle Logic
+        // -------------------------
+        const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
+        const themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
+
+        // Adjust visibility of icons based on active mode
+        function updateToggleIcons() {
+            if (document.documentElement.classList.contains('dark')) {
+                themeToggleLightIcon.classList.remove('hidden');
+                themeToggleDarkIcon.classList.add('hidden');
+            } else {
+                themeToggleDarkIcon.classList.remove('hidden');
+                themeToggleLightIcon.classList.add('hidden');
+            }
+        }
+
+        updateToggleIcons();
+
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        themeToggleBtn.addEventListener('click', function() {
+            // Toggle classes
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('color-theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('color-theme', 'dark');
+            }
+            updateToggleIcons();
+        });
+
+        // -------------------------
+        // Mobile Menu Logic
+        // -------------------------
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const expanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+            mobileMenuButton.setAttribute('aria-expanded', !expanded);
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenuButton.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // -------------------------
+        // Scroll Spy / Active Menu Link Highlight
+        // -------------------------
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        function scrollSpy() {
+            const scrollY = window.pageYOffset + 120; // offset for sticky navbar
+
+            sections.forEach(current => {
+                const sectionHeight = current.offsetHeight;
+                const sectionTop = current.offsetTop;
+                const sectionId = current.getAttribute('id');
+
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('text-indigo-600', 'dark:text-indigo-400', 'font-semibold');
+                    document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.remove('text-slate-600', 'dark:text-slate-300');
+                } else {
+                    document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.remove('text-indigo-600', 'dark:text-indigo-400', 'font-semibold');
+                    document.querySelector('.nav-link[href*=' + sectionId + ']')?.classList.add('text-slate-600', 'dark:text-slate-300');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', scrollSpy);
+        window.addEventListener('load', scrollSpy);
+    </script>
 </body>
 </html>
