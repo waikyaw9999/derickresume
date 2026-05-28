@@ -269,6 +269,26 @@
             background-color: rgba(165, 180, 252, 0.1);
             color: #a5b4fc;
         }
+        .masonry-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        .masonry-item {
+            display: inline-block;
+            width: 100%;
+            margin-bottom: 1.5rem;
+            vertical-align: top;
+        }
+        @media (min-width: 768px) {
+            .masonry-grid {
+                column-count: 2;
+            }
+        }
+        @media (min-width: 1024px) {
+            .masonry-grid {
+                column-count: 3;
+            }
+        }
     </style>
 </head>
 <body class="antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
@@ -365,6 +385,10 @@
                     <span>View My Work</span>
                     <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                 </a>
+                <a href="#website-showcase" class="btn-secondary gap-2">
+                    <i class="fa-solid fa-grid text-lg"></i>
+                    <span>Website Showcase</span>
+                </a>
                 <!-- WhatsApp Button -->
                 <a href="https://wa.me/66953064462" target="_blank" class="btn-secondary gap-2">
                     <i class="fa-brands fa-whatsapp text-lg"></i>
@@ -386,7 +410,7 @@
             <h2 class="section-heading">About Me</h2>
             <div class="card">
                 <p class="text-lg mb-4">
-                    Highly skilled and results-oriented professional with a proven track record in leading complex projects, designing scalable systems, and fostering team growth in multinational environments across <strong class="font-semibold">Singapore</strong>, Thailand, and Myanmar. Adept at combining programming and analytical abilities to successfully manage projects and deliver them on time.
+                    Highly skilled and results-oriented professional with a proven track record in leading complex projects, designing scalable systems, and fostering team growth in multinational environments across <strong class="font-semibold">Singapore, Thailand, and Myanmar</strong>. Adept at combining programming and analytical abilities to successfully manage projects and deliver them on time.
                 </p>
                 <p class="text-lg mb-4">
                     I am a proven team player and effective communicator, skilled at collaborating with all stakeholders. My commitment extends to producing high-quality, scalable, and maintainable software solutions, always adhering to best practices and Agile/Scrum methodologies.
@@ -442,6 +466,8 @@
                             <span class="tag">Directus API</span>
                             <span class="tag">Django</span>
                             <span class="tag">Umbraco</span>
+                            <span class="tag">Framer</span>
+                            <span class="tag">Figma</span>
                             <span class="tag">Entity Framework</span>
                             <span class="tag">.NET Core / Framework</span>
                         </div>
@@ -851,6 +877,69 @@
                 </div>
 
             </div>
+
+            <div id="website-showcase" class="card p-6 mt-10">
+                <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Selected Websites I’ve Developed</h3>
+                <div class="masonry-grid">
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/soneva.png" alt="Soneva preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">Soneva</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Luxury resort website experience and online presence.</p>
+                        <a href="https://soneva.com" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/emesco.png" alt="Emesco Specialty Foods preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">Emesco Specialty Foods</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Food and specialty products website with e-commerce readiness.</p>
+                        <a href="http://emescospecialtyfoods.com/" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/eslanding.png" alt="ES Landing 3 preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">ES Landing 3</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Modern landing page and promotional web experience.</p>
+                        <a href="https://eslanding-three.vercel.app/" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/psat.png" alt="PSAT Beta preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">PSAT Beta</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Beta web platform showcasing product and user onboarding flows.</p>
+                        <a href="https://psat-beta.vercel.app/" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/soma-health.png" alt="Soma One Theta preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">Soma One Theta</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Single-page product showcase and immersive web experience.</p>
+                        <a href="https://soma-one-theta.vercel.app/" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/elegance.png" alt="Hotel Elegance preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">Hotel Elegance</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Elegant hospitality landing page and booking-focused presentation.</p>
+                        <a href="https://hotel-elegance-two.vercel.app/" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                    <div class="masonry-item rounded-3xl border border-slate-200 bg-white/90 p-4 transition hover:-translate-y-1 hover:shadow-2xl dark:border-slate-700/60 dark:bg-slate-950/75">
+                        <div class="mb-4 overflow-hidden rounded-3xl border border-slate-200 dark:border-slate-700 h-52 bg-slate-100 dark:bg-slate-900">
+                            <img src="/jumpsummer.png" alt="Jump Summer Program preview" class="h-full w-full object-cover" />
+                        </div>
+                        <p class="font-semibold text-indigo-600 dark:text-indigo-400 mb-2">Jump Summer Program</p>
+                        <p class="text-sm text-slate-600 dark:text-slate-400">Educational program landing page and campaign microsite.</p>
+                        <a href="https://jumpfoundation.org/lp-2026-summer-programs/" target="_blank" rel="noreferrer" class="mt-4 inline-flex items-center justify-center rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-700">Open Site</a>
+                    </div>
+                </div>
+            </div>
+
         </section>
 
         <!-- Contact Section -->
