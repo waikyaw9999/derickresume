@@ -77,7 +77,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
         // Inline script to prevent theme flash (FOUC)
-        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+        // Default to dark mode unless the visitor explicitly chose light
+        if (localStorage.getItem('color-theme') !== 'light') {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
