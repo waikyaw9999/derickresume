@@ -71,7 +71,7 @@ module.exports = async function handler(req, res) {
       ok: true,
       challenge,
       expiresIn: OTP_TTL_MS,
-      message: 'Verification code sent. Check your inbox.',
+      message: 'Verification code sent. Check your inbox and spam folder.',
     });
   } catch (err) {
     console.error('send-otp error:', err);
