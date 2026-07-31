@@ -21,13 +21,13 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Wai Myo Kyaw">
     <meta name="theme-color" content="#4f46e5">
-    <meta name="description" content="Wai Myo Kyaw is a senior full stack developer and digital product lead with 20+ years building enterprise web, mobile, and cloud solutions for finance, travel, and enterprise clients in Singapore, Thailand, and Myanmar.">
+    <meta name="description" content="Wai Myo Kyaw is a senior full stack developer and project manager with 20+ years building enterprise web, mobile, and cloud solutions for finance, travel, and enterprise clients in Singapore, Thailand, and Myanmar.">
     <meta name="keywords" content="Senior Full Stack Developer, Digital Product Lead, Enterprise Web Development, Mobile Development, .NET, Node.js, Python, Vue.js, WordPress, WooCommerce, DevOps, Cloud, Singapore, Thailand, Myanmar">
     
     <!-- Open Graph / Facebook Meta Tags for Social Sharing -->
     <meta property="og:locale" content="en_US">
     <meta property="og:site_name" content="Wai Myo Kyaw Portfolio">
-    <meta property="og:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Digital Product Lead">
+    <meta property="og:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Project Manager">
     <meta property="og:description" content="Experienced senior full stack developer and product lead with 20+ years delivering enterprise-grade web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <!-- New high-quality image for social sharing -->
     <meta property="og:url" content="https://juneko.online"> <!-- IMPORTANT: Replace with your actual deployed URL -->
@@ -35,7 +35,7 @@
 
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Digital Product Lead">
+    <meta name="twitter:title" content="Wai Myo Kyaw | Senior Full Stack Developer & Project Manager">
     <meta name="twitter:description" content="Experienced senior full stack developer and product lead with 20+ years delivering enterprise-grade web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.">
     <meta name="twitter:image" content="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"> <!-- New high-quality image for Twitter social sharing -->
 
@@ -45,8 +45,8 @@
       "@type": "Person",
       "name": "Wai Myo Kyaw",
       "url": "https://juneko.online",
-      "jobTitle": "Senior Full Stack Developer & Digital Product Lead",
-      "description": "Senior full stack developer and product lead with 20+ years building enterprise web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.",
+      "jobTitle": "Senior Full Stack Developer & Project Manager",
+      "description": "Senior full stack developer and project manager with 20+ years building enterprise web, mobile, and cloud solutions across Singapore, Thailand, and Myanmar.",
       "address": {
         "@type": "PostalAddress",
         "addressCountry": "Myanmar"
@@ -289,7 +289,82 @@
                 column-count: 3;
             }
         }
+
+        /* Auth gate */
+        html.auth-locked #site-content {
+            display: none !important;
+        }
+        html.auth-unlocked #auth-gate {
+            display: none !important;
+        }
+        #auth-gate {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background:
+                radial-gradient(ellipse at top, rgba(79, 70, 229, 0.18), transparent 55%),
+                radial-gradient(ellipse at bottom right, rgba(168, 85, 247, 0.12), transparent 45%),
+                var(--bg-color);
+        }
+        .auth-panel {
+            width: 100%;
+            max-width: 420px;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1.25rem;
+            box-shadow: var(--card-shadow);
+            padding: 2rem;
+        }
+        .auth-input {
+            width: 100%;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-color);
+            border-radius: 0.75rem;
+            padding: 0.85rem 1rem;
+            font-size: 1rem;
+            outline: none;
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .auth-input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+        }
+        .auth-otp {
+            letter-spacing: 0.35em;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        .auth-msg {
+            min-height: 1.25rem;
+            font-size: 0.875rem;
+        }
+        .auth-msg.error { color: #dc2626; }
+        .auth-msg.success { color: #059669; }
+        .dark .auth-msg.error { color: #f87171; }
+        .dark .auth-msg.success { color: #34d399; }
+        .auth-step { display: none; }
+        .auth-step.active { display: block; }
     </style>
+    <script>
+        // Hide resume until session is confirmed (prevents content flash)
+        (function () {
+            try {
+                if (localStorage.getItem('resume_session_token')) {
+                    document.documentElement.classList.add('auth-unlocked');
+                } else {
+                    document.documentElement.classList.add('auth-locked');
+                }
+            } catch (e) {
+                document.documentElement.classList.add('auth-locked');
+            }
+        })();
+    </script>
 </head>
 <body class="antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
 
@@ -298,6 +373,47 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
+    <!-- Email OTP Auth Gate -->
+    <div id="auth-gate" aria-live="polite">
+        <div class="auth-panel">
+            <div class="mb-6 text-center">
+                <p class="font-display text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-1">
+                    JuneKo<span class="text-slate-900 dark:text-white">.online</span>
+                </p>
+                <h1 class="font-display text-xl font-semibold text-slate-900 dark:text-white mb-2">Private access</h1>
+                <p class="text-sm text-slate-500 dark:text-slate-400">Enter your email to receive a one-time code and view this resume.</p>
+            </div>
+
+            <div id="auth-step-email" class="auth-step active">
+                <label for="auth-email" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">Email address</label>
+                <input id="auth-email" class="auth-input mb-4" type="email" autocomplete="email" placeholder="you@company.com" required>
+                <button id="auth-send-btn" type="button" class="btn-primary w-full">
+                    <i class="fa-solid fa-paper-plane mr-2"></i>
+                    <span>Send verification code</span>
+                </button>
+            </div>
+
+            <div id="auth-step-otp" class="auth-step">
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-3">
+                    Code sent to <span id="auth-email-display" class="font-medium text-slate-700 dark:text-slate-200"></span>
+                </p>
+                <label for="auth-otp" class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-2">6-digit code</label>
+                <input id="auth-otp" class="auth-input auth-otp mb-4" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="6" placeholder="••••••" required>
+                <button id="auth-verify-btn" type="button" class="btn-primary w-full mb-3">
+                    <i class="fa-solid fa-lock-open mr-2"></i>
+                    <span>Verify &amp; continue</span>
+                </button>
+                <div class="flex items-center justify-between text-sm">
+                    <button id="auth-back-btn" type="button" class="text-slate-500 hover:text-indigo-600 dark:hover:text-indigo-400">Change email</button>
+                    <button id="auth-resend-btn" type="button" class="text-indigo-600 dark:text-indigo-400 font-medium disabled:opacity-50" disabled>Resend code</button>
+                </div>
+            </div>
+
+            <p id="auth-message" class="auth-msg mt-4 text-center" role="status"></p>
+        </div>
+    </div>
+
+    <div id="site-content">
     <!-- Header Navigation Bar -->
     <nav id="navbar" class="sticky top-0 z-50 w-full border-b border-slate-200/80 bg-white/80 backdrop-blur-md transition-all duration-300 dark:border-slate-800/80 dark:bg-slate-950/80">
         <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-8">
@@ -1010,8 +1126,208 @@
             <p class="text-xs">&copy; 2026 Wai Myo Kyaw. All rights reserved.</p>
         </div>
     </footer>
+    </div><!-- /#site-content -->
 
     <script>
+        // -------------------------
+        // Email OTP Authentication
+        // -------------------------
+        const AUTH_SESSION_KEY = 'resume_session_token';
+        const AUTH_EMAIL_KEY = 'resume_session_email';
+        let authChallenge = null;
+        let authEmail = '';
+        let resendTimer = null;
+
+        const authEls = {
+            gate: document.getElementById('auth-gate'),
+            stepEmail: document.getElementById('auth-step-email'),
+            stepOtp: document.getElementById('auth-step-otp'),
+            email: document.getElementById('auth-email'),
+            emailDisplay: document.getElementById('auth-email-display'),
+            otp: document.getElementById('auth-otp'),
+            sendBtn: document.getElementById('auth-send-btn'),
+            verifyBtn: document.getElementById('auth-verify-btn'),
+            backBtn: document.getElementById('auth-back-btn'),
+            resendBtn: document.getElementById('auth-resend-btn'),
+            message: document.getElementById('auth-message'),
+        };
+
+        function setAuthMessage(text, type) {
+            authEls.message.textContent = text || '';
+            authEls.message.classList.remove('error', 'success');
+            if (type) authEls.message.classList.add(type);
+        }
+
+        function setButtonLoading(btn, loading, idleHtml) {
+            btn.disabled = loading;
+            if (loading) {
+                btn.dataset.idleHtml = btn.innerHTML;
+                btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin mr-2"></i><span>Please wait...</span>';
+            } else {
+                btn.innerHTML = btn.dataset.idleHtml || idleHtml;
+            }
+        }
+
+        function unlockSite() {
+            document.documentElement.classList.remove('auth-locked');
+            document.documentElement.classList.add('auth-unlocked');
+        }
+
+        function lockSite() {
+            document.documentElement.classList.add('auth-locked');
+            document.documentElement.classList.remove('auth-unlocked');
+            localStorage.removeItem(AUTH_SESSION_KEY);
+            localStorage.removeItem(AUTH_EMAIL_KEY);
+        }
+
+        function showOtpStep() {
+            authEls.stepEmail.classList.remove('active');
+            authEls.stepOtp.classList.add('active');
+            authEls.emailDisplay.textContent = authEmail;
+            authEls.otp.value = '';
+            authEls.otp.focus();
+            startResendCooldown(45);
+        }
+
+        function showEmailStep() {
+            authEls.stepOtp.classList.remove('active');
+            authEls.stepEmail.classList.add('active');
+            authChallenge = null;
+            if (resendTimer) clearInterval(resendTimer);
+            authEls.resendBtn.disabled = true;
+            authEls.resendBtn.textContent = 'Resend code';
+            authEls.email.focus();
+        }
+
+        function startResendCooldown(seconds) {
+            let remaining = seconds;
+            authEls.resendBtn.disabled = true;
+            authEls.resendBtn.textContent = `Resend in ${remaining}s`;
+            if (resendTimer) clearInterval(resendTimer);
+            resendTimer = setInterval(() => {
+                remaining -= 1;
+                if (remaining <= 0) {
+                    clearInterval(resendTimer);
+                    authEls.resendBtn.disabled = false;
+                    authEls.resendBtn.textContent = 'Resend code';
+                } else {
+                    authEls.resendBtn.textContent = `Resend in ${remaining}s`;
+                }
+            }, 1000);
+        }
+
+        async function sendOtp() {
+            const email = authEls.email.value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                setAuthMessage('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            setButtonLoading(authEls.sendBtn, true);
+            setAuthMessage('');
+
+            try {
+                const res = await fetch('/api/send-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email }),
+                });
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok) throw new Error(data.error || 'Failed to send code.');
+
+                authEmail = email;
+                authChallenge = data.challenge;
+                setAuthMessage(data.message || 'Code sent.', 'success');
+                showOtpStep();
+            } catch (err) {
+                setAuthMessage(err.message || 'Could not send verification email.', 'error');
+            } finally {
+                setButtonLoading(authEls.sendBtn, false, '<i class="fa-solid fa-paper-plane mr-2"></i><span>Send verification code</span>');
+            }
+        }
+
+        async function verifyOtp() {
+            const otp = authEls.otp.value.trim();
+            if (!/^\d{6}$/.test(otp)) {
+                setAuthMessage('Enter the 6-digit code from your email.', 'error');
+                return;
+            }
+            if (!authChallenge) {
+                setAuthMessage('Please request a new code.', 'error');
+                showEmailStep();
+                return;
+            }
+
+            setButtonLoading(authEls.verifyBtn, true);
+            setAuthMessage('');
+
+            try {
+                const res = await fetch('/api/verify-otp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email: authEmail, otp, challenge: authChallenge }),
+                });
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok) throw new Error(data.error || 'Verification failed.');
+
+                localStorage.setItem(AUTH_SESSION_KEY, data.sessionToken);
+                localStorage.setItem(AUTH_EMAIL_KEY, data.email || authEmail);
+                setAuthMessage('Access granted. Welcome.', 'success');
+                unlockSite();
+            } catch (err) {
+                setAuthMessage(err.message || 'Incorrect or expired code.', 'error');
+            } finally {
+                setButtonLoading(authEls.verifyBtn, false, '<i class="fa-solid fa-lock-open mr-2"></i><span>Verify &amp; continue</span>');
+            }
+        }
+
+        async function validateExistingSession() {
+            const sessionToken = localStorage.getItem(AUTH_SESSION_KEY);
+            if (!sessionToken) {
+                document.documentElement.classList.add('auth-locked');
+                return false;
+            }
+
+            try {
+                const res = await fetch('/api/check-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ sessionToken }),
+                });
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok || !data.ok) {
+                    lockSite();
+                    return false;
+                }
+                unlockSite();
+                return true;
+            } catch {
+                // If API is unreachable, keep gate locked for safety
+                lockSite();
+                setAuthMessage('Unable to verify session. Please sign in again.', 'error');
+                return false;
+            }
+        }
+
+        authEls.sendBtn.addEventListener('click', sendOtp);
+        authEls.verifyBtn.addEventListener('click', verifyOtp);
+        authEls.backBtn.addEventListener('click', () => {
+            setAuthMessage('');
+            showEmailStep();
+        });
+        authEls.resendBtn.addEventListener('click', sendOtp);
+        authEls.email.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') sendOtp();
+        });
+        authEls.otp.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') verifyOtp();
+        });
+        authEls.otp.addEventListener('input', () => {
+            authEls.otp.value = authEls.otp.value.replace(/\D/g, '').slice(0, 6);
+        });
+
+        validateExistingSession();
+
         // -------------------------
         // Dark Mode Toggle Logic
         // -------------------------

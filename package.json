@@ -1,0 +1,9 @@
+{
+  "name": "myresume",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Protected resume site with email OTP authentication",
+  "dependencies": {
+    "resend": "^4.0.0"
+  }
+}
