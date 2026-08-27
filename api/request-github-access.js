@@ -45,9 +45,9 @@ module.exports = async function handler(req, res) {
       return json(res, 400, { error: 'Please enter a valid email address.' });
     }
 
-    if (!isValidGithubUsername(githubUsername)) {
+    if (githubUsername && !isValidGithubUsername(githubUsername)) {
       return json(res, 400, {
-        error: 'Enter a valid GitHub username (letters, numbers, and hyphens only).',
+        error: 'Enter a valid GitHub username (letters, numbers, and hyphens only), or leave it blank.',
       });
     }
 
@@ -58,14 +58,18 @@ module.exports = async function handler(req, res) {
     const notifyEmail = process.env.GITHUB_ACCESS_NOTIFY_EMAIL || 'waikyaw9999@gmail.com';
     const fromEmail = process.env.OTP_FROM_EMAIL || 'onboarding@resend.dev';
     const fromName = process.env.OTP_FROM_NAME || 'JuneKo Portfolio';
-    const profileUrl = `https://github.com/${githubUsername}`;
+    const profileUrl = githubUsername ? `https://github.com/${githubUsername}` : '';
+    const usernameLabel = githubUsername ? `@${githubUsername}` : 'not provided';
+    const subject = githubUsername
+      ? `GitHub access request from @${githubUsername}`
+      : `GitHub access request from ${email}`;
 
     const resend = new Resend(process.env.RESEND_API_KEY);
     const { error } = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
       to: [notifyEmail],
       replyTo: email,
-      subject: `GitHub access request from @${githubUsername}`,
+      subject,
       html: `
         <div style="font-family: Inter, Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0f172a;">
           <h2 style="margin: 0 0 12px; font-size: 20px;">GitHub repository access request</h2>
@@ -77,7 +81,11 @@ module.exports = async function handler(req, res) {
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #64748b;">GitHub username</td>
-              <td style="padding: 8px 0;"><a href="${escapeHtml(profileUrl)}">@${escapeHtml(githubUsername)}</a></td>
+              <td style="padding: 8px 0;">${
+                githubUsername
+                  ? `<a href="${escapeHtml(profileUrl)}">${escapeHtml(usernameLabel)}</a>`
+                  : 'Not provided'
+              }</td>
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #64748b;">Repo / focus</td>
@@ -94,7 +102,7 @@ module.exports = async function handler(req, res) {
       text: [
         'GitHub repository access request',
         `Visitor email: ${email}`,
-        `GitHub username: @${githubUsername} (${profileUrl})`,
+        `GitHub username: ${githubUsername ? `${usernameLabel} (${profileUrl})` : 'Not provided'}`,
         `Repo / focus: ${repoHint || 'Not specified'}`,
         `Message: ${message || 'No message provided'}`,
       ].join('\n'),
