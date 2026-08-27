@@ -1,5 +1,5 @@
 const { listPosts } = require('../lib/blog-posts');
-const { SITE_URL, absoluteUrl } = require('../lib/site');
+const { absoluteUrl } = require('../lib/site');
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'GET' && req.method !== 'HEAD') {
@@ -10,8 +10,10 @@ module.exports = async function handler(req, res) {
 
   const posts = listPosts();
   const lastmod = posts[0] ? posts[0].date : new Date().toISOString().slice(0, 10);
+  const today = new Date().toISOString().slice(0, 10);
 
   const urls = [
+    { loc: absoluteUrl('/showcase'), lastmod: today, changefreq: 'weekly', priority: '0.9' },
     { loc: absoluteUrl('/blog'), lastmod, changefreq: 'weekly', priority: '0.9' },
     ...posts.map((post) => ({
       loc: absoluteUrl(`/blog/${post.slug}`),
