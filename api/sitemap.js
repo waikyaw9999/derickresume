@@ -15,6 +15,7 @@ module.exports = async function handler(req, res) {
   const urls = [
     { loc: absoluteUrl('/showcase'), lastmod: today, changefreq: 'weekly', priority: '0.9' },
     { loc: absoluteUrl('/blog'), lastmod, changefreq: 'weekly', priority: '0.9' },
+    { loc: absoluteUrl('/github-access'), lastmod: today, changefreq: 'monthly', priority: '0.6' },
     ...posts.map((post) => ({
       loc: absoluteUrl(`/blog/${post.slug}`),
       lastmod: post.date,

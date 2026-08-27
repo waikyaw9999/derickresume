@@ -4,6 +4,7 @@
     { "source": "/blog", "destination": "/api/blog-page" },
     { "source": "/blog/:slug", "destination": "/api/blog-page?slug=:slug" },
     { "source": "/showcase", "destination": "/api/showcase-page" },
+    { "source": "/github-access", "destination": "/api/github-access-page" },
     { "source": "/sitemap.xml", "destination": "/api/sitemap" }
   ]
 }

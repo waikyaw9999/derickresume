@@ -1,19 +1,10 @@
 const { Resend } = require('resend');
 const {
-  verifySigned,
   normalizeEmail,
   isValidEmail,
   json,
   readBody,
 } = require('../lib/auth');
-
-function getSessionToken(req, body) {
-  const auth = req.headers.authorization || '';
-  if (auth.toLowerCase().startsWith('bearer ')) {
-    return auth.slice(7).trim();
-  }
-  return (body && body.sessionToken) || null;
-}
 
 function normalizeGithubUsername(value) {
   return String(value || '').trim().replace(/^@/, '');
@@ -35,7 +26,7 @@ function escapeHtml(value) {
 module.exports = async function handler(req, res) {
   if (req.method === 'OPTIONS') {
     res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     return json(res, 204, {});
   }
 
@@ -45,20 +36,13 @@ module.exports = async function handler(req, res) {
 
   try {
     const body = await readBody(req);
-    const sessionToken = getSessionToken(req, body);
-    const payload = verifySigned(sessionToken);
-
-    if (!payload || payload.type !== 'session') {
-      return json(res, 401, { error: 'Please sign in again to request GitHub access.' });
-    }
-
-    const sessionEmail = normalizeEmail(payload.email);
+    const email = normalizeEmail(body.email);
     const githubUsername = normalizeGithubUsername(body.githubUsername);
     const message = String(body.message || '').trim().slice(0, 1000);
     const repoHint = String(body.repoHint || '').trim().slice(0, 200);
 
-    if (!isValidEmail(sessionEmail)) {
-      return json(res, 400, { error: 'Your session email is invalid. Please sign in again.' });
+    if (!isValidEmail(email)) {
+      return json(res, 400, { error: 'Please enter a valid email address.' });
     }
 
     if (!isValidGithubUsername(githubUsername)) {
@@ -80,16 +64,16 @@ module.exports = async function handler(req, res) {
     const { error } = await resend.emails.send({
       from: `${fromName} <${fromEmail}>`,
       to: [notifyEmail],
-      replyTo: sessionEmail,
+      replyTo: email,
       subject: `GitHub access request from @${githubUsername}`,
       html: `
         <div style="font-family: Inter, Arial, sans-serif; max-width: 560px; margin: 0 auto; padding: 24px; color: #0f172a;">
           <h2 style="margin: 0 0 12px; font-size: 20px;">GitHub repository access request</h2>
-          <p style="margin: 0 0 16px; color: #475569;">Someone authenticated on your portfolio requested GitHub access.</p>
+          <p style="margin: 0 0 16px; color: #475569;">Someone requested GitHub access from your public portfolio form.</p>
           <table style="width: 100%; border-collapse: collapse; font-size: 14px;">
             <tr>
               <td style="padding: 8px 0; color: #64748b; width: 140px;">Visitor email</td>
-              <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(sessionEmail)}">${escapeHtml(sessionEmail)}</a></td>
+              <td style="padding: 8px 0;"><a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a></td>
             </tr>
             <tr>
               <td style="padding: 8px 0; color: #64748b;">GitHub username</td>
@@ -109,7 +93,7 @@ module.exports = async function handler(req, res) {
       `,
       text: [
         'GitHub repository access request',
-        `Visitor email: ${sessionEmail}`,
+        `Visitor email: ${email}`,
         `GitHub username: @${githubUsername} (${profileUrl})`,
         `Repo / focus: ${repoHint || 'Not specified'}`,
         `Message: ${message || 'No message provided'}`,

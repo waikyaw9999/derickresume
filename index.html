@@ -56,6 +56,7 @@
         "https://juneko.online",
         "https://juneko.online/showcase",
         "https://juneko.online/blog",
+        "https://juneko.online/github-access",
         "https://wa.me/66953064462"
       ]
     }
@@ -505,6 +506,14 @@
                     <span class="rounded-full bg-emerald-500/10 px-2.5 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">Public</span>
                 </div>
                 <div class="space-y-3">
+                    <a href="/github-access" class="auth-public-link">
+                        <span class="auth-public-icon" aria-hidden="true"><i class="fa-brands fa-github"></i></span>
+                        <span>
+                            <h2>Request GitHub Access</h2>
+                            <p>Ask for access to a private repository — no resume OTP required.</p>
+                        </span>
+                        <span class="auth-public-cta" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
                     <a href="/showcase" class="auth-public-link">
                         <span class="auth-public-icon" aria-hidden="true"><i class="fa-solid fa-table-cells"></i></span>
                         <span>
@@ -733,7 +742,6 @@
 
             window.addEventListener('scroll', scrollSpy);
             scrollSpy();
-            initGithubAccessForm();
             initBlogTeaser();
             initShowcaseTeaser();
         }
@@ -876,72 +884,6 @@
                     (err.message || 'Unable to load showcase.') +
                     '</p>';
             }
-        }
-
-        function initGithubAccessForm() {
-            const form = document.getElementById('github-access-form');
-            const submitBtn = document.getElementById('github-access-submit');
-            const messageEl = document.getElementById('github-access-message');
-            if (!form || !submitBtn || !messageEl) return;
-
-            function setGithubMessage(text, type) {
-                messageEl.textContent = text || '';
-                messageEl.classList.remove('text-red-600', 'dark:text-red-400', 'text-emerald-600', 'dark:text-emerald-400');
-                if (type === 'error') {
-                    messageEl.classList.add('text-red-600', 'dark:text-red-400');
-                } else if (type === 'success') {
-                    messageEl.classList.add('text-emerald-600', 'dark:text-emerald-400');
-                }
-            }
-
-            form.addEventListener('submit', async (event) => {
-                event.preventDefault();
-                const sessionToken = localStorage.getItem(AUTH_SESSION_KEY);
-                if (!sessionToken) {
-                    setGithubMessage('Please sign in again to request access.', 'error');
-                    return;
-                }
-
-                const githubUsername = (document.getElementById('github-username')?.value || '').trim();
-                const repoHint = (document.getElementById('github-repo-hint')?.value || '').trim();
-                const message = (document.getElementById('github-message')?.value || '').trim();
-
-                if (!/^[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,37}[a-zA-Z0-9])?$/.test(githubUsername.replace(/^@/, ''))) {
-                    setGithubMessage('Enter a valid GitHub username.', 'error');
-                    return;
-                }
-
-                setButtonLoading(submitBtn, true);
-                setGithubMessage('');
-
-                try {
-                    const res = await fetch('/api/request-github-access', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                            Authorization: 'Bearer ' + sessionToken,
-                        },
-                        body: JSON.stringify({
-                            githubUsername: githubUsername.replace(/^@/, ''),
-                            repoHint,
-                            message,
-                        }),
-                    });
-                    const data = await res.json().catch(() => ({}));
-                    if (!res.ok) throw new Error(data.error || 'Failed to submit request.');
-
-                    form.reset();
-                    setGithubMessage(data.message || 'Request sent successfully.', 'success');
-                } catch (err) {
-                    setGithubMessage(err.message || 'Unable to submit request.', 'error');
-                } finally {
-                    setButtonLoading(
-                        submitBtn,
-                        false,
-                        '<i class="fa-solid fa-lock-open text-sm"></i><span>Submit access request</span>'
-                    );
-                }
-            });
         }
 
         async function loadResumeContent(sessionToken) {
