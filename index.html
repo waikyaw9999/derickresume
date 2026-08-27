@@ -54,6 +54,7 @@
       "email": "mailto:waikyaw9999@gmail.com",
       "sameAs": [
         "https://juneko.online",
+        "https://juneko.online/blog",
         "https://wa.me/66953064462"
       ]
     }
@@ -351,10 +352,65 @@
         .dark .auth-msg.success { color: #34d399; }
         .auth-step { display: none; }
         .auth-step.active { display: block; }
+
+        /* Mini blog */
+        .blog-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 1rem;
+            box-shadow: var(--card-shadow);
+            padding: 1.5rem;
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+        .blog-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--card-hover-shadow);
+            border-color: rgba(79, 70, 229, 0.35);
+        }
+        .blog-prose h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 1.5rem 0 0.75rem;
+            color: inherit;
+        }
+        .blog-prose p {
+            margin-bottom: 1rem;
+        }
+        .blog-prose ul {
+            margin: 0 0 1rem 1.25rem;
+            list-style: disc;
+        }
+        .blog-prose li {
+            margin-bottom: 0.4rem;
+        }
+        .blog-prose a {
+            color: #4f46e5;
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+        .dark .blog-prose a {
+            color: #a5b4fc;
+        }
     </style>
     <script>
-        // Keep resume locked until authenticated content is loaded from the API
-        document.documentElement.classList.add('auth-locked');
+        // Keep resume locked until authenticated. Send old hash blog links to crawlable URLs.
+        (function () {
+            document.documentElement.classList.add('auth-locked');
+            var hash = location.hash || '';
+            var postMatch = hash.match(/^#blog\/([a-z0-9-]+)/i);
+            if (postMatch) {
+                location.replace('/blog/' + encodeURIComponent(postMatch[1]));
+                return;
+            }
+            if (/^#blog\/?$/i.test(hash)) {
+                location.replace('/blog');
+            }
+        })();
     </script>
 </head>
 <body class="antialiased bg-slate-50 dark:bg-slate-950 text-slate-900 dark:text-slate-100 transition-colors duration-300">
@@ -402,6 +458,11 @@
             </div>
 
             <p id="auth-message" class="auth-msg mt-4 text-center" role="status"></p>
+            <div class="mt-6 pt-5 border-t border-slate-200 dark:border-slate-700 text-center">
+                <a href="/blog" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">
+                    Or read the mini blog without signing in
+                </a>
+            </div>
         </div>
     </div>
 
@@ -575,6 +636,84 @@
             window.addEventListener('scroll', scrollSpy);
             scrollSpy();
             initGithubAccessForm();
+            initBlogTeaser();
+        }
+
+        function formatBlogDate(isoDate) {
+            try {
+                return new Date(isoDate + 'T00:00:00').toLocaleDateString(undefined, {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                });
+            } catch (_) {
+                return isoDate;
+            }
+        }
+
+        function renderBlogTags(tags) {
+            return (tags || [])
+                .map((tag) => '<span class="tag">' + tag.replace(/</g, '&lt;') + '</span>')
+                .join('');
+        }
+
+        async function initBlogTeaser() {
+            const slot = document.getElementById('blog-slot');
+            if (!slot) return;
+
+            slot.innerHTML = `
+                <section id="blog" class="mb-20" aria-labelledby="blog-heading">
+                    <h2 id="blog-heading" class="section-heading">Mini Blog</h2>
+                    <p class="mx-auto mb-8 max-w-2xl text-center text-slate-600 dark:text-slate-400 font-light">
+                        Short notes on products, delivery, and engineering practice.
+                    </p>
+                    <div id="blog-list" class="space-y-4">
+                        <p class="text-center text-sm text-slate-500 dark:text-slate-400">Loading posts...</p>
+                    </div>
+                    <p class="mt-6 text-center">
+                        <a href="/blog" class="text-sm font-semibold text-indigo-600 dark:text-indigo-400 hover:underline">View all posts</a>
+                    </p>
+                </section>`;
+
+            const listEl = document.getElementById('blog-list');
+            try {
+                const res = await fetch('/api/blog');
+                const data = await res.json().catch(() => ({}));
+                if (!res.ok) throw new Error(data.error || 'Unable to load blog.');
+                const posts = data.posts || [];
+                if (!posts.length) {
+                    listEl.innerHTML = '<p class="text-center text-sm text-slate-500 dark:text-slate-400">No posts yet.</p>';
+                    return;
+                }
+                listEl.innerHTML = posts
+                    .map((post) => {
+                        const href = '/blog/' + encodeURIComponent(post.slug);
+                        return (
+                            '<a href="' +
+                            href +
+                            '" class="blog-card block">' +
+                            '<p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-2">' +
+                            formatBlogDate(post.date) +
+                            '</p>' +
+                            '<h3 class="font-display text-xl font-bold text-slate-900 dark:text-white mb-2">' +
+                            post.title.replace(/</g, '&lt;') +
+                            '</h3>' +
+                            '<p class="text-sm text-slate-600 dark:text-slate-400 mb-4">' +
+                            (post.excerpt || '').replace(/</g, '&lt;') +
+                            '</p>' +
+                            '<div>' +
+                            renderBlogTags(post.tags) +
+                            '</div>' +
+                            '</a>'
+                        );
+                    })
+                    .join('');
+            } catch (err) {
+                listEl.innerHTML =
+                    '<p class="text-center text-sm text-red-600 dark:text-red-400">' +
+                    (err.message || 'Unable to load posts.') +
+                    '</p>';
+            }
         }
 
         function initGithubAccessForm() {
